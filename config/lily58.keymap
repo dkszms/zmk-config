@@ -13,18 +13,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/pointing.h> // 마우스 기능 추가
 
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer 2 2000>;
-}
-
-&mmv_input_listener {
-    input-processors = <&zip_temp_layer 2 2000>;
-}
-
-&msc_input_listener {
-    input-processors = <&zip_temp_layer 2 2000>;
-}
-
 / {
     keymap {
         compatible = "zmk,keymap";
