@@ -23,10 +23,14 @@ include:
   # Your other keyboard parts here
   # -----------------------------------------
   # Change the board appropriately, you can use any board
-  - board: seeeduino_xiao_ble
+  # - board: seeeduino_xiao_ble
+  #   shield: lily58_dongle
+  # - board: seeeduino_xiao_ble
+  #   shield: settings_reset
+
+  - board: nice_nano_v2
     shield: lily58_dongle
-  - board: seeeduino_xiao_ble
-    shield: settings_reset
+
   - board: nice_nano_v2
     shield: settings_reset
   # Add these cmake-args to the peripherals you wish to use with the dongle
