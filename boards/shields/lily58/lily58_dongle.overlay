@@ -4,7 +4,7 @@
     chosen {
         zmk,kscan = &mock_kscan;
 		zmk,physical-layout = &physical_layout0;  // New item added
-        zmk,display = &display;
+        zmk,display = &pro_micro_i2c;
     };
 
     mock_kscan: mock_kscan_0 {
