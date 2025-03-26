@@ -4,6 +4,7 @@
     chosen {
         zmk,kscan = &mock_kscan;
 		zmk,physical-layout = &physical_layout0;  // New item added
+        zmk,display = &display;
     };
 
     mock_kscan: mock_kscan_0 {
@@ -35,5 +36,25 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
         transform = <&default_transform>;
+    };
+    
+        // I2C 버스 설정 추가
+    &pro_micro_i2c {
+        status = "okay";
+        
+        display: sh1106@3c {
+            compatible = "sinowealth,sh1106";
+            reg = <0x3c>;
+            width = <128>;
+            height = <64>;
+            segment-offset = <0>;
+            page-offset = <0>;
+            display-offset = <0>;
+            multiplex-ratio = <63>;
+            segment-remap;
+            com-invdir;
+            com-sequential;
+            prechargep = <0x22>;
+        };
     };
 };

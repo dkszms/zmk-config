@@ -1,4 +1,4 @@
-if SHIELD_LILY58_DONGLE || SHIELD_LILY58_DONGLE_DISPLAY
+if SHIELD_LILY58_DONGLE
 
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
@@ -9,15 +9,26 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 config ZMK_SPLIT
     default y
+
+config ZMK_DISPLAY
+    default y
+
+config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+    default y
+
 endif
+
 
 if ZMK_DISPLAY
 
 config I2C
     default y
 
-config SSD1306
+config SH1106
     default y
+
+#config SSD1306
+#    default y
 
 choice ZMK_DISPLAY_WORK_QUEUE
     default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
