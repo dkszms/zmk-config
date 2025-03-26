@@ -37,13 +37,13 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         display-name = "Default Layout";
         transform = <&default_transform>;
     };
-    
-        // I2C 버스 설정 추가
+
+    // I2C 버스 설정 추가
     &pro_micro_i2c {
         status = "okay";
         
-        display: sh1106@3c {
-            compatible = "sinowealth,sh1106";
+        display: display@3c {
+            compatible = "solomon,ssd1306fb";
             reg = <0x3c>;
             width = <128>;
             height = <64>;
