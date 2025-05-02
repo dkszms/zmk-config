@@ -1,6 +1,6 @@
-
 if SHIELD_LILY58_DONGLE
 
+# Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
     default "Lily58"
 
@@ -9,7 +9,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
-if SHIELD_LILY58_LEFT || SHIELD_LILY58_RIGHT
+if SHIELD_LILY58_DONGLE || SHIELD_LILY58_LEFT || SHIELD_LILY58_RIGHT
 
 config ZMK_SPLIT
     default y
@@ -54,7 +54,7 @@ endif #LVGL
 # Set this to the number of peripherals your dongle will have.
 # For a unibody, this would be 1. If you have left and right halves, set it to 2, etc.
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-    default 2
+    default 3
 
 # Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + your desired number of BT profiles (default is 5)
 config BT_MAX_CONN
