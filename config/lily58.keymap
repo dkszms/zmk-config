@@ -14,6 +14,8 @@
 #include <dt-bindings/zmk/pointing.h> // 마우스 기능 추가
 
 
+
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -29,9 +31,7 @@
             bindings = <&kp LANG_HANGEUL>;
         };
     };
-};
-
-/ {
+    
     keymap {
         compatible = "zmk,keymap";
 
@@ -64,8 +64,8 @@
 &kp GRAVE  &kp F1            &kp F2             &kp F3              &kp F4              &kp F5                              &kp F6        &kp F7      &kp F8    &kp F9     &kp F10    &trans
 &trans     &msc SCRL_UP      &mkp MB4           &mmv MOVE_UP        &mkp MB5            &msc SCRL_LEFT                      &kp PG_UP     &kp HOME    &kp UP    &kp END    &kp MINUS  &kp F12
 &trans     &msc SCRL_DOWN    &mmv MOVE_LEFT     &mmv MOVE_DOWN      &mmv MOVE_RIGHT     &msc SCRL_RIGHT                     &kp PG_DN     &kp LEFT    &kp DOWN  &kp RIGHT  &kp EQUAL  &kp TILDE
-&trans     &trans            &trans             &mkp MB2            &mkp MB1            &mkp MB3        &kp F11  &kp F12    &trans        &kp MINUS   &kp PLUS  &kp LBRC   &kp RBRC   &kp &trans
-                                                &trans              &trans              &trans          &trans   &trans     &trans        &trans      &trans
+&trans     &trans            &trans             &mkp MB2            &mkp MB1            &mkp MB3        &kp F11  &kp F12    &trans        &kp MINUS   &kp PLUS  &kp LBRC   &kp RBRC   &trans
+                                                &trans              &trans              &trans          &trans   &trans   &trans        &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
