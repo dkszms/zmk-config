@@ -41,17 +41,8 @@ include:
 
   # Add these cmake-args to the peripherals you wish to use with the dongle
   - board: nice_nano_v2
-<<<<<<< HEAD
-    shield: lily58_left
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-  - board: nice_nano_v2
-    shield: lily58_right
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
- 
-=======
     shield: lily58_peripheral_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: nice_nano_v2
     shield: lily58_peripheral_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
->>>>>>> 8cf07780456fab6aeb9a6c9d625a8a0c1027b73b
