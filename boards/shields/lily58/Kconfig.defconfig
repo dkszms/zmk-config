@@ -7,14 +7,12 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+endif
+
+if SHIELD_LILY58_DONGLE || SHIELD_LILY58_LEFT || SHIELD_LILY58_RIGHT
+
 config ZMK_SPLIT
     default y
-
-config ZMK_DISPLAY
-    default y
-
-#config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
-#    default y
 
 endif
 
@@ -24,14 +22,14 @@ if ZMK_DISPLAY
 config I2C
     default y
 
-config SSD1306
-    default y
+#config SSD1306
+#    default y
 
 choice ZMK_DISPLAY_WORK_QUEUE
     default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
 endchoice
 
-endif
+endif #ZMK_DISPLAY
 
 if LVGL
 
@@ -48,7 +46,10 @@ choice LV_COLOR_DEPTH
     default LV_COLOR_DEPTH_1
 endchoice
 
-endif
+endif #LVGL
+
+
+#### 동글 관련 세팅
 
 # Set this to the number of peripherals your dongle will have.
 # For a unibody, this would be 1. If you have left and right halves, set it to 2, etc.
