@@ -25,9 +25,9 @@
         esc_tilde: esc_tilde {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp ESC>, <&kp TILDE>
+            bindings = <&kp ESC>, <&kp TILDE>;
             mods = <(MOD_RSFT)>;
-        }
+        };
 
         // lang_cap 1단계: Ctrl에 따른 분기 (lang_cap 이전 처리)
         ctrl_hanja: ctrl_hanja {
@@ -43,9 +43,9 @@
         lang_cap:  lang_capslock {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LANG_HANGEUL>, <&ctrl_hanja>
+            bindings = <&kp LANG_HANGEUL>, <&ctrl_hanja>;
             mods = <(MOD_LSFT)|(MOD_RSFT)>;
-        }
+        };
 
 
     //// 레이어 탭 ////
@@ -61,7 +61,7 @@
             bindings = <&mo2>, <&kp BSPC>;
             display-name = "Layer-Tap";
         };
-    }
+    };
     
     keymap {
         compatible = "zmk,keymap";
