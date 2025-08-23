@@ -58,7 +58,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <80>;
             quick-tap-ms = <80>;
-            bindings = <&mo2>, <&kp BSPC>;
+            bindings = <&mo 2>, <&kp BSPC>;
             display-name = "Layer-Tap";
         };
     };
