@@ -116,8 +116,8 @@
 &trans      &kp F1		&kp F2		&kp F3		&kp F4		&kp F5								&kp F6		&kp F7      &kp F8		&kp F9		&kp F10		&trans
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
 &trans      &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                              &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &langcap    &trans
-                        &trans      &trans      &trans      &trans                              &trans      &trans      &KP_BSPC    &KP_DOT
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &lang_cap   &trans
+                        &trans      &trans      &trans      &trans                              &trans      &trans      &kp BSPC    &kp KP_DOT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -132,11 +132,11 @@
 // |       |       |       |       |       |       |   "["  |  |  "]"   |       |   1   |   2   |   3   |       |       |
 //                 |       |       |       |       |                    |       |   0   |  BSPC |   .   |
             bindings = <
-&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &KP_DIVDE   &KP_MULTIPLY    &trans      &tog 3
-&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &KP_N7      &KP_N8      &KP_N9          &KP_MINUM   &trans
-&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &KP_N4      &KP_N5      &KP_N6          &KP_PLUS    &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &KP_N1      &KP_N2      &KP_N3          &trans      &trans
-                        &trans      &trans      &trans      &trans                              &trans      &KP_N0      &KP_BSPC    &KP_DOT
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &kp KP_DIVDE    &kp KP_MULTIPLY   &trans      &tog 3
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &kp KP_N7   &kp KP_N8    &kp KP_N9      &kp KP_MINUS   &trans
+&trans      &trans      &trans      &trans      &trans      &trans                              &trans      &kp KP_N4   &kp KP_N5    &kp KP_N6      &kp KP_PLUS    &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_N1   &kp KP_N2    &kp KP_N3      &trans      &trans
+                        &trans      &trans      &trans      &trans                              &trans      &kp KP_N0   &kp BSPC     &kp KP_DOT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
