@@ -44,7 +44,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LANG_HANGEUL>, <&ctrl_hanja>;
-            mods = <(MOD_LSFT)|(MOD_RSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
 
