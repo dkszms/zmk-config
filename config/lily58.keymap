@@ -50,7 +50,6 @@
 
     //// 레이어 탭 ////
         
-        // 탭하면 BackSpace 홀드하면 레이어2
         lt: layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
