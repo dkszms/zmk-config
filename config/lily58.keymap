@@ -49,7 +49,8 @@
 
 
     //// 레이어 탭 ////
-        
+
+        /*
         lt: layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -59,6 +60,7 @@
             bindings = <&mo>, <&kp>;
             display-name = "Layer-Tap";
         };
+        */
     };
     
     keymap {
@@ -77,7 +79,7 @@
 &kp TAB		&kp Q		&kp W		&kp E		&kp R		&kp T									    &kp Y		&kp U       &kp I		&kp O		&kp P		&kp BSLH
 &kp LCTRL	&kp A		&kp S		&kp D		&kp F		&kp G									    &kp H		&kp J       &kp K		&kp L		&kp SEMI	&kp SQT
 &kp LSHFT	&kp Z		&kp X		&kp C		&kp V		&kp B		&kp LC(PGUP)    &kp LC(PGDN)	&kp N		&kp M       &kp COMMA	&kp DOT		&kp FSLH	&kp RSHFT
-						&kp LGUI	&kp LALT	&mo 1		&kp SPACE								    &kp ENTER	&lt 2 BSPC  &kp BSPC	&kp DEL
+						&kp LGUI	&kp LALT	&mo 1		&kp SPACE								    &kp ENTER	&mo 2       &kp BSPC	&kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -90,13 +92,13 @@
 // |       |SCRL_UP|M(Prev)|  M(↑) |M(Next)|SCRL_L |                    |       |  HOME |   ↑   |  END  |  -(_) |  PGUP |
 // |       |SCRL_DN|  M(←) |  M(↓) |  M(→) |SCRL_R |                    |       |   ←   |   ↓   |   →   |  =(+) |  PGDN |
 // |       |       |M(Mclk)|M(Rclk)|M(Lclk)|       |   F11  |  |   F12  |       |       |   {   |   }   |Hangeul|       |
-//                 |       |       |       |       |                    |       |       |  BSPC |  DEL  |
+//                 |       |       |       |Hangeul|                    |  BSPC |       |  BSPC |  DEL  |
             bindings = <
 &kp GRAVE	&kp F1			&kp F2			&kp F3			&kp F4			    &kp F5								    &kp F6		&kp F7      &kp F8		&kp F9		&kp F10		&trans
 &trans		&msc SCRL_UP	&kp C_AC_BACK	&mmv MOVE_UP	&kp C_AC_FORWARD    &msc SCRL_LEFT						    &trans	    &kp HOME    &kp UP		&kp END		&kp MINUS	&kp PG_UP
 &trans		&msc SCRL_DOWN	&mmv MOVE_LEFT	&mmv MOVE_DOWN	&mmv MOVE_RIGHT	    &msc SCRL_RIGHT						    &kp TILDE	&kp LEFT    &kp DOWN	&kp RIGHT	&kp EQUAL	&kp PG_DN
 &trans		&trans			&mkp MCLK		&mkp RCLK		&mkp LCLK		    &trans		    &kp F11		&kp F12     &trans		&kp BSPC	&kp LBKT	&kp RBKT	&lang_cap	&trans
-                            &trans			&trans			&trans			    &trans                                  &trans		&trans		&trans		&trans
+                            &trans			&trans			&trans			    &lang_cap                               &kp BSPC	&trans		&trans		&trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -109,13 +111,13 @@
 // |       |       |       |       |       |       |                    |       |       |       |       |       |       |
 // |       |   1   |   2   |   3   |   4   |   5   |                    |   6   |   7   |   8   |   9   |   10  |       |
 // |       |       |       |       |       |       |   F11  |  |   F12  |       |       |       |       |Hangeul|       |
-//                 |       |       |       |       |                    |       |       |       |       |
+//                 |       |       |       |Hangeul|                    |       |       |       |       |
             bindings = <
 &trans      &kp F1		&kp F2		&kp F3		&kp F4		&kp F5								&kp F6		&kp F7      &kp F8		&kp F9		&kp F10		&trans
 &trans      &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans      &trans      &trans
 &trans      &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                              &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans
-&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &lang_cap   &trans
-                        &trans      &trans      &trans      &trans                              &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp BSPC    &trans      &trans      &lang_cap   &trans
+                        &trans      &trans      &trans      &lang_cap                           &kp BSPC    &trans      &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
