@@ -36,7 +36,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LANG_HANGEUL>, <&shift_hanja>;
-            mods = <(MOD_LCTL|MOD_RSFT)>;
+            mods = <(MOD_LCTL)>;
         };
 
         // lang_cap 2단계: Shift에 따른 분기 (Ctrl을 눌렀을 때 Shift도 눌려있다면!)
@@ -44,7 +44,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp CAPS>, <&kp LANG_HANJA>;  
-            mods = <(MOD_LCTL|MOD_RSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
 
