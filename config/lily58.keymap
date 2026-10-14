@@ -29,18 +29,18 @@
             mods = <(MOD_RSFT)>;
         };
 
-        // lang_cap 1단계: Ctrl에 따른 분기
+        // lang_cap 1단계: Ctrl에 따른 분기 
         // (Hangeul, CapsLock)
-        // 쉬프트 누름 여부에 따라 한/영 또는 Capslock 입력
+        // 컨트롤 누름 여부에 따라 한/영 또는 Capslock 입력
         lang_cap:  lang_capslock {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LANG_HANGEUL>, <&shift_hanja>;
+            bindings = <&kp LANG_HANGEUL>, <&caps_hanja>;
             mods = <(MOD_LCTL)>;
         };
 
-        // lang_cap 2단계: Shift에 따른 분기 (Ctrl을 눌렀을 때 Shift도 눌려있다면!)
-        shift_hanja: shift_hanja {
+        // lang_cap 2단계: Shift에 따른 분기
+        caps_hanja: caps_hanja {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp CAPS>, <&kp LANG_HANJA>;  
@@ -85,6 +85,64 @@
         };
         */
     };
+
+    //// 콤보 ////
+    // 홈로우 두 키를 동시에 눌러 괄호 입력
+    // key-positions 번호는 keymap 의 키 순서(0부터, 왼쪽→오른쪽, 위→아래)
+    // 홈로우(3번째 줄): 24=CTRL 25=A 26=S 27=D 28=F 29=G | 30=H 31=J 32=K 33=L 34=; 35='
+    // timeout-ms: 두 키를 이 시간(ms) 안에 눌러야 콤보로 인식
+    // layers: 기본 레이어(0)에서만 동작 (마우스/숫자 레이어 등에서 오작동 방지)
+    combos {
+        compatible = "zmk,combos";
+
+        // F + D -> (
+        combo_lpar {
+            timeout-ms = <20>;
+            key-positions = <28 27>;
+            bindings = <&kp LPAR>;
+            layers = <0>;
+        };
+
+        // D + S -> {
+        combo_lbrc {
+            timeout-ms = <20>;
+            key-positions = <27 26>;
+            bindings = <&kp LBRC>;
+            layers = <0>;
+        };
+
+        // S + A -> [
+        combo_lbkt {
+            timeout-ms = <20>;
+            key-positions = <26 25>;
+            bindings = <&kp LBKT>;
+            layers = <0>;
+        };
+
+        // J + K -> )
+        combo_rpar {
+            timeout-ms = <20>;
+            key-positions = <31 32>;
+            bindings = <&kp RPAR>;
+            layers = <0>;
+        };
+
+        // K + L -> }
+        combo_rbrc {
+            timeout-ms = <20>;
+            key-positions = <32 33>;
+            bindings = <&kp RBRC>;
+            layers = <0>;
+        };
+
+        // L + ; -> ]
+        combo_rbkt {
+            timeout-ms = <20>;
+            key-positions = <33 34>;
+            bindings = <&kp RBKT>;
+            layers = <0>;
+        };
+    };
     
     keymap {
         compatible = "zmk,keymap";
@@ -102,7 +160,7 @@
 &kp TAB		&kp Q		&kp W		&kp E		&kp R		&kp T									    &kp Y		&kp U       &kp I		&kp O		&kp P		&kp BSLH
 &kp LCTRL	&kp A		&kp S		&kp D		&kp F		&kp G									    &kp H		&kp J       &kp K		&kp L		&kp SEMI	&kp SQT
 &kp LSHFT	&kp Z		&kp X		&kp C		&kp V		&kp B		&kp LC(PGUP)    &kp LC(PGDN)	&kp N		&kp M       &kp COMMA	&kp DOT		&kp FSLH	&kp RSHFT
-						&mt F14 F13	&alt_win	&mo1_mo2	&kp SPACE								    &kp ENTER	&kp BSPC    &kp DEL	    &kp F15
+						&kp LGUI	&alt_win	&mo1_mo2	&kp SPACE								    &kp ENTER	&kp BSPC    &kp DEL	    &kp LALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
