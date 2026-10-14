@@ -140,12 +140,12 @@
             timeout-ms = <20>;
             key-positions = <33 34>;
             bindings = <&kp RBKT>;
-            layers = <0>;S
+            layers = <0>;
         };
     };
     
     keymap {
-        compatible = "zmk,keymap";s
+        compatible = "zmk,keymap";
 
         // Layer 0
         default_layer {
